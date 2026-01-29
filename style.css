@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Playfair Display", serif;
 }
 
 body{
@@ -19,9 +18,7 @@ nav{
     justify-content: space-between;
     padding: 0 15px;
     position: sticky;
-    flex-wrap: wrap;
-    z-index: 100;
-    top: 0;
+    font-family: "Playfair Display", serif;
 }
 
 .brand a{
