@@ -117,6 +117,7 @@ nav{
 }
 
 .overlay button:hover {
+    color: azure;
     background-color: #d8928a;
     transform: translateY(-0.1px);
 }
@@ -185,6 +186,7 @@ nav{
 }
 
 .read-more-btn:hover {
+    color: azure;
     background-color: #d8928a;
     transform: translateY(0.1px);
 }
