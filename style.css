@@ -473,6 +473,8 @@ nav {
 
 @media (max-width: 768px){
     nav{
+        position: static;
+        top: auto;
         flex-direction: column;
         padding: 10px;
     }
