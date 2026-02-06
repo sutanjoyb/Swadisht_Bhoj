@@ -194,49 +194,62 @@ nav {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-
-    nav {
-        position: static;
+@media (max-width: 768px){
+    nav{
+        position: sticky;
+        top: 0;
         flex-direction: column;
         padding: 10px;
     }
 
-    .navlinks {
+    .hamburger{
+        display: block;
+    }
+
+    .navlinks{
         display: none;
         flex-direction: column;
         width: 100%;
         background: white;
         padding: 15px 0;
+        gap: 12px;
+        text-align: center;
     }
 
-    .navlinks.active {
+    .navlinks.active{
         display: flex;
     }
 
-    .hamburger {
-        display: block;
+    .navlinks a{
+        font-size: 16px;
     }
 
-    .text-content {
+    .container{
+        padding: 40px 15px;
+        scroll-margin-top: 90px;
+    }
+
+    .text-content{
         padding: 40px 25px;
     }
 
-    .text-content h2 {
+    .text-content h2{
         font-size: 2.2rem;
     }
 
-    .text-content p {
+    .text-content p{
         font-size: 1.1rem;
         line-height: 1.8rem;
     }
 
-    .footer-container {
+    .footer-container{
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
 
-    .footer-social {
+    .footer-social{
         justify-content: center;
     }
 }
+
