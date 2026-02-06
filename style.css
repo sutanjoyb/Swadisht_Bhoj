@@ -57,12 +57,18 @@ nav {
     font-weight: bolder;
     padding: 0 5px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .navlinks a:hover {
     background: #ebebeb;
     border-radius: 4px;
     color: black;
+    transform: translateY(-2px);
+}
+
+.navlinks a:active{
+    transform: scale(0.96);
 }
 
 .img-container {    
@@ -192,12 +198,13 @@ nav {
     color: black;
     background-color: white;
     border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .read-more-btn:hover {
     color: black;
     background: #ebebeb;
-    transform: translateY(0.1px);
+    transform: translateY(-2px);
 }
 
 .image {
