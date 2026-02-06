@@ -71,6 +71,14 @@ nav {
     transform: scale(0.96);
 }
 
+#specials {
+    scroll-margin-top: 100px;
+}
+
+#home{
+    scroll-margin-top: 80px;
+}
+
 .img-container {    
     position: relative;
     width: 100%;
@@ -123,13 +131,30 @@ nav {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.overlay button:hover {
-    color: black;
-    background: #ebebeb;
-    transform: translateY(-0.1px);
+.view-menu-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: #c0392b;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
+
+.view-menu-btn:hover {
+    background: #a93226;
+    transform: translateY(-3px);
+}
+
+.view-menu-btn:active {
+    transform: scale(0.96);
+}
+
 
 .icons {
     display: flex;
@@ -154,71 +179,83 @@ nav {
     font-size: 1rem;
 }
 
-.container {
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-    justify-content: space-between;
-    padding: 40px 20px;
-    background: #E8F8C1;
+.about-home {
+    padding:45px 10px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-.text-content {
-    margin-top: 65px;
-    background: white;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.8);
-    border-radius: 10px;
-    flex: 1;
-    padding: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: content;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.text-content h2 {
+.about-home .title {
     font-family: "Bodoni Moda", serif;
+    text-align: center;
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-.text-content p {
+.section-title {
+    margin-bottom: 50px;
+    font-size: 2.6rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    display: block;
+    background: #c0392b;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.about-img img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.about-text {
+    padding: 35px;
+}
+
+.about-text p {
     font-family: "Playfair Display", serif;
-    font-size: 1.35rem;
-    line-height: 1.9rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #333;
 }
 
 .read-more-btn {
-    margin-top: 30px;
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    margin-top: 10px;
     padding: 12px 30px;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color:#c0392b;
     border-radius: 6px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .read-more-btn:hover {
-    color: black;
-    background: #ebebeb;
-    transform: translateY(-2px);
+    background: #a93226;
+    color: white;
+    transform: translateY(-4px);
 }
 
-.image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 65px;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
+.read-more-btn:active{
+    transform: scale(0.96);
 }
 
 .heading {
@@ -363,15 +400,23 @@ nav {
 
 .btn.primary:hover {
     background: #a93226;
+    transform: translateY(-3px);
 }
 
 .btn.secondary:hover {
     background: #2c2828;
+    transform: translateY(-3px);
+}
+
+.btn.primary:active,
+.btn.secondary:active {
+    transform: scale(0.96);
 }
 
 .contact-section{
     text-align: center;
     padding: 90px 20px;
+    margin-bottom: 40px;
 }
 
 .contact-section h2{
@@ -517,17 +562,28 @@ nav {
 
 @media (max-width: 768px){
     nav{
-        position: static;
-        top: auto;
+        position: sticky;
+        top: 0;
         flex-direction: column;
         padding: 10px;
     }
 
+    .hamburger{
+        display: block;
+    }
+
     .navlinks{
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 15px 0;
         gap: 12px;
-        margin-top: 10px;
+        text-align: center;
+    }
+
+    .navlinks.active{
+        display: flex;
     }
 
     .navlinks a{
@@ -551,31 +607,33 @@ nav {
         font-size: 1.2rem;
     }
 
-    .container{
-        flex-direction: column;
-        padding: 20px;
+    .about-home{
+        padding: 60px 15px;
     }
 
-    .text-content{
-        padding: 20px;
-        text-align: center;
-    }
-
-    .text-content h2{
+    .about-home .title{
         font-size: 2.2rem;
     }
 
-    .text-content p{
-        font-size: 1.1rem;
+    .about-card{
+        margin: 0 10px;
     }
 
-    .image{
-        justify-content: center;
-        margin-top: 20px;
+    .about-img img{
+        height: 220px;
+    }
+
+    .about-text{
+        padding: 25px;
+    }
+
+    .about-text p{
+        font-size: 1rem;
     }
 
     .image-gallery{
         flex-direction: column;
+        gap: 25px;
     }
 
     .image-items{
@@ -622,21 +680,5 @@ nav {
 
     .footer-social{
         justify-content: center;
-    }
-
-    .hamburger{
-        display: block;
-    }
-
-    .navlinks{
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        padding: 15px 0;
-    }
-
-    .navlinks.active{
-        display: flex;
     }
 }
